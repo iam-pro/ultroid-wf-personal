@@ -59,6 +59,7 @@ jobs:
             python-version: '3.9.9'
        - run: |
             sh action.sh
+         working-directory: "/root/TeamUltroid"
        - name: Loop workflow
          continue-on-error: true
          run: |
