@@ -17,13 +17,6 @@ jobs:
     steps:
        - name: Checkout
          uses: actions/checkout@main
-       
-       - uses: actions/checkout@v2
-       - name: Set up Python
-         uses: actions/setup-python@v2
-         with:
-            python-version: '3.9.9'
-            architecture: x64
 
        - uses: styfle/cancel-workflow-action@0.9.1
          name: "Cancel duplicate workflow runs"
@@ -59,11 +52,13 @@ jobs:
          continue-on-error: true
          run: |
            git clone https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com/${{ secrets.CREDS }} ultroid
-       - name: Running Ultroid
-         timeout-minutes: 353
-         continue-on-error: true
-         run: |
-              sudo sh action.sh
+
+       - name: Set up Python & Run
+         uses: actions/setup-python@v2.3.1
+         with:
+            python-version: '3.9.9'
+       - run: |
+            sh action.sh
        - name: Loop workflow
          continue-on-error: true
          run: |
