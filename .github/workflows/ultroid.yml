@@ -45,20 +45,20 @@ jobs:
             megatools \
             neofetch \
             wkhtmltopdf \
-            zip
+            zip \
+            software-properties-common
+            sudo add-apt-repository ppa:deadsnakes/ppa
+            sudo apt install python3.9
+            sudo update-alternatives  --set python /usr/bin/python3.9
+            sudo update-alternatives  --set python3 /usr/bin/python3.9
             sudo apt-get autoremove --purge
 
-       - name: cloning repo
+       - name: Run Ultroid
          continue-on-error: true
+         timeout-minutes: 350
          run: |
            git clone https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com/${{ secrets.CREDS }} ultroid
-
-       - name: Set up Python & Run
-         uses: actions/setup-python@v2.3.1
-         with:
-            python-version: '3.9.9'
-       - run: |
-            sudo sh action.sh
+           sudo sh action.sh
        - name: Loop workflow
          continue-on-error: true
          run: |
