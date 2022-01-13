@@ -48,7 +48,7 @@ jobs:
             zip \
             software-properties-common
             sudo add-apt-repository ppa:deadsnakes/ppa
-            sudo apt install python3.9 python3.9-distutils -y
+            sudo apt install python3.9 python3.9-distutils python3.9-dev -y
             sudo update-alternatives --install /usr/local/bin/python python /usr/bin/python3.9 1
             sudo update-alternatives --install /usr/local/bin/python3 python3 /usr/bin/python3.9 1
             curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
