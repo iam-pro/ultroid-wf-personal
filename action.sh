@@ -4,5 +4,4 @@ cd /root/TeamUltroid && ls
 pip3 --version
 pip3 install -U -r req*
 pip3 install -U -r res*/sta*/opt*
-pip3 list --format=freeze
-python3 -m py-Ultroid
+python3.9 -m py-Ultroid
