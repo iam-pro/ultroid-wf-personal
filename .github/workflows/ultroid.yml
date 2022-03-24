@@ -57,7 +57,7 @@ jobs:
 
        - name: Run Ultroid
          continue-on-error: true
-         timeout-minutes: 330
+         timeout-minutes: 320
          run: |
            git clone https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com/${{ secrets.CREDS }} ultroid
            sudo sh action.sh
