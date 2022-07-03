@@ -3,4 +3,4 @@ cp ultroid/.env /root/TeamUltroid/.env
 cd /root/TeamUltroid && ls
 pip3 install -U -r req* --ignore-installed
 pip3 install -U -r res*/sta*/opt* --ignore-installed
-bash startup || python3 -m py-Ultroid
+bash startup
